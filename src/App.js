@@ -1,12 +1,8 @@
 import "./App.css";
-import Nav from "./components/Nav.js";
-// import Home from "./Home.js";
-// import Sites from "./sites";
-// import Footer from "./components/footer";
-// import Map from "./components/map";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import { Suspense, lazy } from "react";
 
+const Nav = lazy(() => import("./components/Nav"));
 const Home = lazy(() => import("./components/home"));
 const Footer = lazy(() => import("./components/footer"));
 const Sites = lazy(() => import("./components/sites"));
