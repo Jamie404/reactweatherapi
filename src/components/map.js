@@ -28,9 +28,9 @@ class LiveMap extends React.Component {
         <div>
           {this.state.sites.map((item, t) => {
             return (
-              <Marker position={[item.lat, item.lng]}>
+              <Marker key={t} position={[item.lat, item.lng]}>
                 <Popup>
-                  <u>{item.site_name}</u> <br /> <b>{item.lat}, {item.lng}</b>
+                  <u key={t}>{item.site_name}</u> <br /> <b>{item.lat}, {item.lng}</b>
                 </Popup>
               </Marker>
             );
