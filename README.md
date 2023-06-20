@@ -6,3 +6,6 @@ Live Map example:
 
 ![alt text](https://github.com/Jamie404/reactweatherapi/blob/main/public/exampleMap.JPG?raw=true)
 
+Live Camera Image example:
+
+![alt text](https://github.com/Jamie404/reactweatherapi/blob/main/public/cam.png?raw=true)
