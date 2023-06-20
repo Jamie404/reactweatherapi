@@ -27,6 +27,11 @@ class Nav extends React.Component {
                 Map
               </Link>
             </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/livemap">
+                Live Map
+              </Link>
+            </li>
           </ul>
         </nav>
       </div>

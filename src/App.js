@@ -7,6 +7,7 @@ const Home = lazy(() => import("./components/home"));
 const Footer = lazy(() => import("./components/footer"));
 const Sites = lazy(() => import("./components/sites"));
 const Map = lazy(() => import("./components/map"));
+const LiveMap = lazy(() => import("./components/livemap"));
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
             <Route path="/" exact component={Home} />
             <Route path="/sites" exact component={Sites} />
             <Route path="/map" exact component={Map} />
+            <Route path="/livemap" exact component={LiveMap} />
             <Route path="*" component={Home} />
           </Switch>
         </Suspense>
