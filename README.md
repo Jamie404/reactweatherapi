@@ -8,4 +8,4 @@ Live Map example:
 
 Live Camera Image example:
 
-![alt text](https://github.com/Jamie404/reactweatherapi/blob/main/public/cam.png?raw=true)
+![alt text](https://github.com/Jamie404/reactweatherapi/blob/main/public/gweedore.JPG?raw=true)
