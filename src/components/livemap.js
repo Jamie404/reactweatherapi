@@ -49,7 +49,7 @@ class LiveMap extends React.Component {
     // Update the state with the joined array
     this.setState({ joinedArray });
     this.liveSites = joinedArray;
-    console.log(this.liveSites);
+    // console.log(this.liveSites);
   }
 
   render() {
