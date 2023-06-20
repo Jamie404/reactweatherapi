@@ -49,7 +49,7 @@ class LiveMap extends React.Component {
     // Update the state with the joined array
     this.setState({ joinedArray });
     this.liveSites = joinedArray;
-    // console.log(this.liveSites);
+    console.log(this.liveSites);
   }
 
   render() {
@@ -68,18 +68,32 @@ class LiveMap extends React.Component {
             return (
               <Marker key={t} position={[item.lat, item.lng]}>
                 <Popup>
-                  <u key={t}>{item.site_name}</u> <br />{" "}
                   <b>
-                    {item.lat}, {item.lng}
-                    <a
-                      href={[item.weatherData[0].properties.camera_image]}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <br />
-                      <img src="./cam.png" alt="" style={{ width: 25 }} />
-                    </a>
-                  </b>
+                    <u key={t}>{item.site_name}</u>
+                  </b>{" "}
+                  <br /> {[item.weatherData[0].properties.weather_definition]}
+                  <br />
+                  {[
+                    Math.round(
+                      item.weatherData[0].properties.air_temperature * 100
+                    ) / 100,
+                  ]}{" "}
+                  °C
+                  <br />
+                  {[
+                    Math.round(
+                      item.weatherData[0].properties.wind_speed * 100
+                    ) / 100,
+                  ]}{" "}
+                  km/h
+                  <a
+                    href={[item.weatherData[0].properties.camera_image]}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <br />
+                    <img src="./cam.png" alt="" style={{ width: 25 }} />
+                  </a>
                 </Popup>
               </Marker>
             );
