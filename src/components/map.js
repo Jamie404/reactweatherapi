@@ -33,7 +33,7 @@ class LiveMap extends React.Component {
                   <b>
                     <u key={t}>{item.site_name}</u>
                   </b>{" "}
-                  <br /> {item.lat}, {item.lng}
+                  <br /> [{item.lat}, {item.lng}]
                 </Popup>
               </Marker>
             );

@@ -16,7 +16,7 @@ table {
   width: 100%;
 }
 
-footer{
+footer {
   /* position: absolute; */
   bottom: 0px;
   width: 100%;
@@ -24,7 +24,7 @@ footer{
   color: #818181;
 }
 
-.leaflet-container{
+.leaflet-container {
   width: 79vw;
   height: 80vh;
 }
