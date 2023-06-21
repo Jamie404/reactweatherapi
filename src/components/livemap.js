@@ -92,7 +92,12 @@ class LiveMap extends React.Component {
                     rel="noopener noreferrer"
                   >
                     <br />
-                    <img src="./cam.png" alt="" style={{ width: 25 }} />
+                    <img
+                      src="./cam.png"
+                      alt="loading.."
+                      style={{ width: 25 }}
+                      loading="lazy"
+                    />
                   </a>
                 </Popup>
               </Marker>
