@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom/cjs/react-router-dom";
+import "../App.css";
 
 class Nav extends React.Component {
   render() {
@@ -10,7 +11,7 @@ class Nav extends React.Component {
           href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
         ></link>
 
-        <nav className="navbar navbar-expand-sm bg-light">
+        <nav className="navbar navbar-expand-sm bg-light navbar-default navbar-fixed-top">
           <ul className="navbar-nav">
             <li className="nav-item">
               <Link className="nav-link" to="/">
