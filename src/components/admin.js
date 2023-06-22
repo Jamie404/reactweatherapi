@@ -35,9 +35,16 @@ class Home extends React.Component {
             <tbody>
               {this.state.sites.map((item, t) => {
                 return (
-                  <tr key={t}>
-                    <td>{item.site_name}</td>
-                  </tr>
+                  <div>
+                    <tr key={t}>
+                      <td>
+                        <input type="text" defaultValue={item.site_name} />
+                      </td>
+                    </tr>
+                    <tr key={t}>
+                      <input type="button" />
+                    </tr>
+                  </div>
                 );
               })}
             </tbody>
