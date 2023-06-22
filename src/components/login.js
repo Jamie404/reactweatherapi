@@ -13,24 +13,29 @@ class Login extends React.Component {
       .then((data) => this.setState({ users: data }));
   }
 
+  handleEnter = (e) => {
+    if (e.key === "Enter") {
+      this.checklogin();
+    }
+  };
+
   checklogin = () => {
     const checkUser = document.getElementById("email").value;
-    const checkPass = document.getElementById("pass").value;
+    const checkPass = document.getElementById("password").value;
 
-    const loginDetails = this.state.login;
+    const filteredUsers = this.state.users.filter(
+      (user) => user.email === checkUser
+    );
 
-    if (
-      loginDetails[0].email === checkUser &&
-      loginDetails[0].password === checkPass
-    ) {
+    if (filteredUsers[0].password === checkPass) {
       // alert("Login Successful..");
-      localStorage.setItem("loginToken", "1");
-      document.getElementById("pass").value = "";
+      sessionStorage.setItem("loginToken", "1");
+      document.getElementById("password").value = "";
       window.location.href = "./admin";
     } else {
       // alert("Login Failed - Please try again..");
-      localStorage.setItem("loginToken", "0");
-      document.getElementById("pass").value = "";
+      sessionStorage.setItem("loginToken", "0");
+      document.getElementById("password").value = "";
     }
   };
 
@@ -42,22 +47,25 @@ class Login extends React.Component {
         <div className="mb-3">
           <label>Email address</label>
           <input
-          id="email"
+            id="email"
             type="email"
             className="form-control"
-            placeholder="Enter email"
+            // placeholder="Enter email"
+            defaultValue={"flargle@gargle.com"}
+            onKeyDown={this.handleEnter}
           />
         </div>
         <div className="mb-3">
           <label>Password</label>
           <input
-          id="password"
+            id="password"
             type="password"
             className="form-control"
             placeholder="Enter password"
+            onKeyDown={this.handleEnter}
           />
         </div>
-        <div className="mb-3">
+        {/* <div className="mb-3">
           <div className="custom-control custom-checkbox">
             <input
               type="checkbox"
@@ -68,9 +76,13 @@ class Login extends React.Component {
               Remember me
             </label>
           </div>
-        </div>
+        </div> */}
         <div className="d-grid">
-          <button type="submit" className="btn btn-primary">
+          <button
+            onClick={this.checklogin}
+            type="button"
+            className="btn btn-primary"
+          >
             Submit
           </button>
         </div>
