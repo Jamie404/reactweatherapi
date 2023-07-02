@@ -38,6 +38,11 @@ class Nav extends React.Component {
                 </Link>
               </li>
               <li className="nav-item">
+                <Link className="nav-link" to="/today">
+                  Today
+                </Link>
+              </li>
+              <li className="nav-item">
                 <Link className="nav-link" to="/livemap">
                   Live Map
                 </Link>

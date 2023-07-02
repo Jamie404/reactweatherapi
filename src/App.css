@@ -28,3 +28,8 @@ footer {
   width: 79vw;
   height: 80vh;
 }
+
+li a {
+  text-decoration: none;
+  color: #818181;
+}
