@@ -24,7 +24,7 @@ class Home extends React.Component {
           <link
             rel="stylesheet"
             href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
-          ></link>
+          />
 
           <table className="table-striped table">
             <thead>
@@ -33,20 +33,20 @@ class Home extends React.Component {
               </tr>
             </thead>
             <tbody>
-              {this.state.sites.map((item, t) => {
-                return (
-                  <div>
-                    <tr key={t}>
-                      <td>
-                        <input type="text" defaultValue={item.site_name} />
-                      </td>
-                    </tr>
-                    <tr key={t}>
+              {this.state.sites.map((item, index) => (
+                <React.Fragment key={index}>
+                  <tr>
+                    <td>
+                      <input type="text" defaultValue={item.site_name} />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
                       <input type="button" />
-                    </tr>
-                  </div>
-                );
-              })}
+                    </td>
+                  </tr>
+                </React.Fragment>
+              ))}
             </tbody>
           </table>
         </div>

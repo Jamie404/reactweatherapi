@@ -40,24 +40,26 @@ class Home extends React.Component {
   sortDataTable = (sortOrder) => {
     const { today } = this.state;
 
-    let sortedData = [...today];
+    const sortProperties = {
+      airAsc: "air_temperature",
+      airDesc: "air_temperature",
+      roadAsc: "road_surface_temperature",
+      roadDesc: "road_surface_temperature",
+      windAsc: "wind_speed",
+      windDesc: "wind_speed",
+    };
 
-    if (sortOrder === "airAsc") {
-      sortedData.sort((a, b) => a.air_temperature - b.air_temperature);
-    } else if (sortOrder === "airDesc") {
-      sortedData.sort((a, b) => b.air_temperature - a.air_temperature);
-    } else if (sortOrder === "roadAsc") {
-      sortedData.sort(
-        (a, b) => a.road_surface_temperature - b.road_surface_temperature
-      );
-    } else if (sortOrder === "roadDesc") {
-      sortedData.sort(
-        (a, b) => b.road_surface_temperature - a.road_surface_temperature
-      );
-    } else if (sortOrder === "windAsc") {
-      sortedData.sort((a, b) => a.wind_speed - b.wind_speed);
-    } else {
-      sortedData.sort((a, b) => b.wind_speed - a.wind_speed);
+    const sortProperty = sortProperties[sortOrder];
+    const sortedData = [...today].sort(
+      (a, b) => a[sortProperty] - b[sortProperty]
+    );
+
+    if (
+      sortOrder === "airDesc" ||
+      sortOrder === "roadDesc" ||
+      sortOrder === "windDesc"
+    ) {
+      sortedData.reverse();
     }
 
     this.setState({ today: sortedData, sortOrder });
