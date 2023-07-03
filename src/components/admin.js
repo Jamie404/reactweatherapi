@@ -3,7 +3,7 @@ import "../App.css";
 
 let check = sessionStorage.getItem("loginToken");
 
-class Home extends React.Component {
+class Admin extends React.Component {
   constructor(props) {
     super(props);
     this.state = { sites: [] };
@@ -54,4 +54,4 @@ class Home extends React.Component {
     }
   }
 }
-export default Home;
+export default Admin;

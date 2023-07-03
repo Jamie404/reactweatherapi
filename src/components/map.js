@@ -2,7 +2,7 @@ import React from "react";
 import "../App.css";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 
-class LiveMap extends React.Component {
+class Map extends React.Component {
   constructor(props) {
     super(props);
     this.state = { sites: [] };
@@ -43,4 +43,4 @@ class LiveMap extends React.Component {
     );
   }
 }
-export default LiveMap;
+export default Map;

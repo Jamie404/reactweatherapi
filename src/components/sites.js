@@ -1,7 +1,7 @@
 import React from "react";
 import "../App.css";
 
-class Home extends React.Component {
+class Sites extends React.Component {
   constructor(props) {
     super(props);
     this.state = { sites: [] };
@@ -41,4 +41,4 @@ class Home extends React.Component {
     );
   }
 }
-export default Home;
+export default Sites;

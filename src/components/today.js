@@ -1,7 +1,7 @@
 import React from "react";
 import "../App.css";
 
-class Home extends React.Component {
+class Today extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -169,7 +169,14 @@ class Home extends React.Component {
             {this.state.today.map((item, t) => {
               return (
                 <tr key={t}>
-                  <td>{item.site_name}</td>
+                  <td>
+                    <a
+                      className="nav"
+                      href={`today/${item.site_name}/${this.state.year}-${this.state.month}-${this.state.day}`}
+                    >
+                      {item.site_name}
+                    </a>
+                  </td>
                   <td>{item.air_temperature}</td>
                   <td>{item.road_surface_temperature}</td>
                   <td>{item.wind_speed}</td>
@@ -183,4 +190,4 @@ class Home extends React.Component {
   }
 }
 
-export default Home;
+export default Today;
