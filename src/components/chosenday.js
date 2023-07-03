@@ -86,12 +86,6 @@ class ChosenDay extends React.Component {
             })}
           </tbody>
         </table>
-        <hr />
-        <h2>Air Temperature by the Hour</h2>
-        <br />
-        <div>
-          <div id="line"></div>
-        </div>
       </div>
     );
   }
