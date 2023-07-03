@@ -6,6 +6,7 @@ class ChosenDay extends React.Component {
     super(props);
     this.state = {
       chosen: [],
+      average: [],
       url: window.location.href.split("/"),
     };
   }
@@ -17,6 +18,10 @@ class ChosenDay extends React.Component {
     fetch("http://localhost:3005/chosen" + params)
       .then((data) => data.json())
       .then((data) => this.setState({ chosen: data }));
+
+    fetch("http://localhost:3005/weatherdataaverage" + params)
+      .then((data) => data.json())
+      .then((data) => this.setState({ average: data }));
   }
 
   getMonthName(monthNumber) {
@@ -29,7 +34,10 @@ class ChosenDay extends React.Component {
   }
 
   render() {
-    let cameraSiteName = this.state.url[4].toString().replace("%20", " ");
+    let cameraSiteName = this.state.url[4]
+      .toString()
+      .replace("%20", " ")
+      .replace("%20", " ");
     let day = this.state.url[5].toString().split("-")[2];
     let month = this.state.url[5].toString().split("-")[1];
     let year = this.state.url[5].toString().split("-")[0];
@@ -54,12 +62,16 @@ class ChosenDay extends React.Component {
 
         <table className="table-striped table">
           <thead>
-            <tr>
-              <th>Time</th>
-              <th>Air Temperature °C</th>
-              <th>Road Temperature °C</th>
-              <th>Wind Speed km/h</th>
-            </tr>
+            {this.state.average.map((item, i) => {
+              return (
+                <tr key={i}>
+                  <th>Time</th>
+                  <th>{`Air Temperature °C (${item.airAverage})`}</th>
+                  <th>{`Road Temperature °C (${item.roadAverage})`}</th>
+                  <th>{`Wind Speed km/h (${item.windAverage})`}</th>
+                </tr>
+              );
+            })}
           </thead>
           <tbody>
             {this.state.chosen.map((item, t) => {
