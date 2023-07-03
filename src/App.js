@@ -9,6 +9,7 @@ const Sites = lazy(() => import("./components/sites"));
 const Map = lazy(() => import("./components/map"));
 const Today = lazy(() => import("./components/today"));
 const ChosenDay = lazy(() => import("./components/chosenday"));
+const Live = lazy(() => import("./components/live"));
 const LiveMap = lazy(() => import("./components/livemap"));
 const Login = lazy(() => import("./components/login"));
 const Admin = lazy(() => import("./components/admin"));
@@ -29,6 +30,7 @@ function App() {
               exact
               component={ChosenDay}
             />
+            <Route path="/live" exact component={Live} />
             <Route path="/livemap" exact component={LiveMap} />
             <Route path="/login" exact component={Login} />
             <Route path="/admin" exact component={Admin} />
