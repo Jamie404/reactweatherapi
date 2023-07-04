@@ -28,12 +28,10 @@ class Login extends React.Component {
     );
 
     if (filteredUsers[0].password === checkPass) {
-      // alert("Login Successful..");
       sessionStorage.setItem("loginToken", "1");
       document.getElementById("password").value = "";
       window.location.href = "./admin";
     } else {
-      // alert("Login Failed - Please try again..");
       sessionStorage.setItem("loginToken", "0");
       document.getElementById("password").value = "";
     }
@@ -62,21 +60,10 @@ class Login extends React.Component {
             type="password"
             className="form-control"
             placeholder="Enter password"
+            autoFocus
             onKeyDown={this.handleEnter}
           />
         </div>
-        {/* <div className="mb-3">
-          <div className="custom-control custom-checkbox">
-            <input
-              type="checkbox"
-              className="custom-control-input"
-              id="customCheck1"
-            />
-            <label className="custom-control-label" htmlFor="customCheck1">
-              Remember me
-            </label>
-          </div>
-        </div> */}
         <div className="d-grid">
           <button
             onClick={this.checklogin}
@@ -86,9 +73,6 @@ class Login extends React.Component {
             Submit
           </button>
         </div>
-        {/* <p className="forgot-password text-right">
-          Forgot <a href="#">password?</a>
-        </p> */}
       </form>
     );
   }

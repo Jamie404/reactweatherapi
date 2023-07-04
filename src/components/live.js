@@ -7,7 +7,7 @@ class Live extends React.Component {
     this.state = {
       sites: [],
       joinedArray: [],
-      filteredArray: [], // New property to hold the filtered results
+      filteredArray: [],
     };
   }
 
@@ -19,7 +19,6 @@ class Live extends React.Component {
     fetch("https://tiitrafficdata.azurewebsites.net/api/Weather")
       .then((data2) => data2.json())
       .then((data2) => {
-        // console.log(data2.features[0]); // Logging data2
         this.setState({ test: data2 });
 
         // Joining arrays by site_name

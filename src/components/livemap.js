@@ -17,7 +17,6 @@ class LiveMap extends React.Component {
     fetch("https://tiitrafficdata.azurewebsites.net/api/Weather")
       .then((data2) => data2.json())
       .then((data2) => {
-        // console.log(data2.features[0]); // Logging data2
         this.setState({ test: data2 });
 
         // Joining arrays by site_name
@@ -49,7 +48,6 @@ class LiveMap extends React.Component {
     // Update the state with the joined array
     this.setState({ joinedArray });
     this.liveSites = joinedArray;
-    // console.log(this.liveSites);
   }
 
   render() {
