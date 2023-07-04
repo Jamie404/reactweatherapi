@@ -71,7 +71,15 @@ class LiveMap extends React.Component {
                   <b>
                     <u key={t}>{item.site_name}</u>
                   </b>{" "}
-                  <br /> {[item.weatherData[0].properties.weather_definition]}
+                  <br /> {[item.weatherData[0].properties.weather_definition]}{" "}
+                  <img
+                    src={`./${[
+                      item.weatherData[0].properties.weather_definition,
+                    ]}.png`}
+                    alt="loading.."
+                    style={{ width: 25 }}
+                    loading="lazy"
+                  />
                   <br />
                   {[
                     Math.round(
